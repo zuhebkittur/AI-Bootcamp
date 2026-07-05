@@ -65,3 +65,56 @@ while True:
             print("Employee Not Found!")
 
         print("Invalid Choice. Please try again.")
+
+
+        employee = {"Name" : "Zuheb",
+                    "Age" : 33,
+                    "City" : "Bangalore",
+                    "Profession" : "Digital Marketing",
+                    "Dream job" : "AI Engineer"
+                    }
+        print(employee["Name"], employee["Dream Job"])
+
+#         Laptop
+
+# Brand : Dell
+# RAM : 16 GB
+# Processor : Intel i7
+# Price : 75000
+
+
+                laptop ={"brand" : "Dell",
+                         "RAM" : "16 GB",
+                         "processor" : "Intel i7",
+                         "price" : 75000
+                         }
+        print(laptop["brand"] - laptop["price"])
+
+Name
+Age
+City
+Current Job
+Dream Job
+Experience
+Salary
+
+===== MY PROFILE =====
+
+Name : Zuheb
+Current Job : Digital Marketer
+Dream Job : AI Engineer
+Experience : 9 Years
+
+                employee = {"name" : "Zuheb",
+                            "age" : 30,
+                            "city" : "Bangalore",
+                            "current job": "Digital Marketing",
+                            "dream job" : "AI Engineer",
+                            "experience" : "9 years", 
+                            "salary" : 55555
+                            }
+print("="*4, MY PROFILE, "="*4)
+print(f"Name" : employee["name"])
+print(f"Current Job" : employee["current job"])
+print(f"Dream Job" : employee["dream job"])
+print(f"Experience" : employee["experience"])
