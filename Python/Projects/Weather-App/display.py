@@ -1,0 +1,12 @@
+def display_weather(data):
+        print("=" * 40)
+        print("🌦️ WEATHER REPORT")
+        print("=" * 40)
+        print(f"📍 City        : {data['location']['name']}")
+        print(f"🏙️ Region      : {data['location']['region']}")
+        print(f"🌍 Country     : {data['location']['country']}")
+        print(f"🌡️ Temperature : {data['current']['temp_c']} °C")
+        print(f"💧 Humidity    : {data['current']['humidity']} %")
+        print(f"💨 Wind Speed  : {data['current']['wind_kph']} km/h")
+        print(f"☁️ Condition   : {data['current']['condition']['text']}")
+        print("=" * 40)
