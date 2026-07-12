@@ -1,0 +1,11 @@
+Product,Category,Price,Quantity,City,Salesperson
+Laptop,Electronics,65000,5,Bangalore,Rahul
+Mouse,Electronics,800,20,Delhi,Priya
+Keyboard,Electronics,1500,15,Bangalore,Amit
+Chair,Furniture,3500,8,Pune,Neha
+Table,Furniture,7000,4,Bangalore,Rahul
+Monitor,Electronics,12000,6,Delhi,Amit
+Phone,Electronics,40000,7,Mumbai,Priya
+Sofa,Furniture,25000,2,Bangalore,Neha
+Headphones,Electronics,2500,12,Pune,Rahul
+Printer,Electronics,9000,3,Delhi,Amit

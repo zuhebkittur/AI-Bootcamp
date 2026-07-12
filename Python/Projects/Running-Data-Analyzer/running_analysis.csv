@@ -1,0 +1,16 @@
+Runner,Date,Distance_km,Duration_min,Pace_min_per_km,Calories,Heart_Rate,City
+Zuheb,2026-07-01,5,28,5.6,380,148,Bangalore
+Rahul,2026-07-01,10,54,5.4,760,155,Delhi
+Priya,2026-07-02,3,19,6.3,220,142,Pune
+Amit,2026-07-02,15,78,5.2,1120,162,Mumbai
+Neha,2026-07-03,7,40,5.7,520,150,Bangalore
+Zuheb,2026-07-04,8,44,5.5,610,152,Bangalore
+Rahul,2026-07-05,12,66,5.5,920,158,Delhi
+Priya,2026-07-05,5,31,6.2,360,145,Pune
+Amit,2026-07-06,18,95,5.3,1350,166,Mumbai
+Neha,2026-07-06,10,58,5.8,760,153,Bangalore
+Zuheb,2026-07-07,6,34,5.7,450,149,Bangalore
+Rahul,2026-07-08,8,43,5.4,610,154,Delhi
+Priya,2026-07-08,4,25,6.2,290,143,Pune
+Amit,2026-07-09,20,108,5.4,1510,168,Mumbai
+Neha,2026-07-10,9,51,5.6,690,151,Bangalore
