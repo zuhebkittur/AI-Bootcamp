@@ -15,12 +15,21 @@ def load_data():
 
     df = pd.read_excel(excel_path)
 
-    # Convert Total Time to Timedelta
-    df["Total Time"] = pd.to_timedelta(df["Total Time"].astype(str))
+    # Convert Processing Date
+    df["Processing Date"] = pd.to_datetime(
+        df["Processing Date"],
+        dayfirst=True
+    )
 
-    # Create a new column with total minutes
+    # Convert Total Time
+    df["Total Time"] = pd.to_timedelta(
+        df["Total Time"].astype(str)
+    )
+
+    # Total Minutes
     df["Total Minutes"] = (
-        df["Total Time"].dt.total_seconds() / 60
+        df["Total Time"]
+        .dt.total_seconds() / 60
     ).astype(int)
 
     return df

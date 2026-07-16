@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 
 # ==========================================================
@@ -6,38 +7,51 @@ import streamlit as st
 # ==========================================================
 
 def show_filters(df):
-    """
-    Display sidebar filters and return the selected values.
-    """
 
-    st.sidebar.markdown("---")
-    st.sidebar.subheader("🎛 Filters")
+    # st.sidebar.markdown("---")
+    st.sidebar.subheader("🔍 Filters")
 
-    # Date Filter
-    dates = sorted(df["Processing Date"].dropna().unique())
+    # Ensure Processing Date is datetime
+    df["Processing Date"] = pd.to_datetime(df["Processing Date"])
 
-    selected_date = st.sidebar.selectbox(
-        "📅 Select Date",
-        options=["All"] + list(dates)
+    min_date = df["Processing Date"].min().date()
+    max_date = df["Processing Date"].max().date()
+
+    # ==========================================================
+    # Date Range
+    # ==========================================================
+
+    from_date = st.sidebar.date_input(
+        "📅 From Date",
+        value=min_date,
+        min_value=min_date,
+        max_value=max_date
     )
 
-    # Week Filter
-    weeks = sorted(df["Week"].dropna().unique())
-
-    selected_week = st.sidebar.selectbox(
-        "📆 Select Week",
-        options=["All"] + list(weeks)
+    to_date = st.sidebar.date_input(
+        "📅 To Date",
+        value=max_date,
+        min_value=min_date,
+        max_value=max_date
     )
 
+    # ==========================================================
     # Task Filter
-    tasks = sorted(df["Task"].dropna().unique())
+    # ==========================================================
 
-    selected_task = st.sidebar.selectbox(
-        "📋 Select Task",
-        options=["All"] + list(tasks)
+    # tasks = sorted(df["Task"].dropna().unique())
+
+    # selected_task = st.sidebar.selectbox(
+    #     "📋 Task",
+    #     ["All"] + tasks
+    # )
+    selected_task = "All"
+
+    return (
+        from_date,
+        to_date,
+        selected_task
     )
-
-    return selected_date, selected_week, selected_task
 
 
 # ==========================================================
@@ -46,27 +60,29 @@ def show_filters(df):
 
 def apply_filters(
     df,
-    selected_date,
-    selected_week,
+    from_date,
+    to_date,
     selected_task
 ):
-    """
-    Filter dataframe based on selected filters.
-    """
 
     filtered_df = df.copy()
 
-    if selected_date != "All":
-        filtered_df = filtered_df[
-            filtered_df["Processing Date"] == selected_date
-        ]
+    filtered_df["Processing Date"] = pd.to_datetime(
+        filtered_df["Processing Date"]
+    )
 
-    if selected_week != "All":
-        filtered_df = filtered_df[
-            filtered_df["Week"] == selected_week
-        ]
+    filtered_df = filtered_df[
+        (
+            filtered_df["Processing Date"].dt.date >= from_date
+        )
+        &
+        (
+            filtered_df["Processing Date"].dt.date <= to_date
+        )
+    ]
 
     if selected_task != "All":
+
         filtered_df = filtered_df[
             filtered_df["Task"] == selected_task
         ]

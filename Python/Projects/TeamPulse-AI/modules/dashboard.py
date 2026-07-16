@@ -1,6 +1,10 @@
 import streamlit as st
 
 
+# ==========================================================
+# Header
+# ==========================================================
+
 def show_header():
 
     st.title("🚀 TeamPulse AI")
@@ -12,7 +16,17 @@ def show_header():
     st.divider()
 
 
-def show_sidebar():
+# ==========================================================
+# Sidebar
+# ==========================================================
+
+def show_sidebar(
+    employee_name,
+    current_date,
+    current_time,
+    current_week,
+    total_records
+):
 
     with st.sidebar:
 
@@ -22,13 +36,17 @@ def show_sidebar():
 
         st.subheader("👤 Employee")
 
-        st.success("Zuheb")
+        st.success(employee_name)
 
         st.markdown("---")
 
-        st.info("📅 Date : 15-Jul-2026")
+        st.info(f"📅 Date : {current_date}")
 
-        st.info("📆 Week : 1")
+        st.info(f"🕒 Time : {current_time}")
+
+        st.info(f"📆 Week : {current_week}")
+
+        st.info(f"📊 Records : {total_records}")
 
         st.success("🟢 Connected")
 
